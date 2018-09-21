@@ -1,0 +1,79 @@
+
+.bg {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.grid {
+    margin: 2.5em 1.5em;
+    
+    /* display: inline-block; */
+}
+
+[id^=col-img-override] {
+     
+}
+
+[id^=col-details-override] {
+
+}
+
+img[id^=item-image] {
+    height: 218px;
+    width: 218px;
+    margin: 5% 0% 5% 5%;
+}
+
+[id^=col-container-custom] {
+    padding: 0.1em 1.0em;
+    width: 75%;
+    margin-top: 1.0em;
+    border-radius: 0.5em;
+    box-shadow: inset 0 0.15625rem 0.5rem 0 rgba(0,0,0,0.24);
+}
+
+/* override bootstrap css */
+grid-override {
+    width: 100%;
+    height: 250px;
+    display: inline-block;
+}
+
+[id^=row-override] {
+    display: block;
+    height: 100%;
+    margin: 0.50em auto;
+    background-color: white;
+    border-radius: 0.25em;
+    box-shadow: 0 0.3125rem 1rem 0 rgba(0,0,0,0.24);
+}
+
+.quantity-box {
+    width: 50%;
+}
+
+.quantity-box p {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.button-quantity {
+    font-size: 100%;
+    font-family: inherit;
+    font-weight: 400;
+    margin: 0.1em;
+    background-color: hsl(0, 0%, 98%);
+    border: none;
+    box-shadow: 0 0.15625rem 0.5rem 0 rgba(0,0,0,0.24);
+    border-radius: 0.25em;
+}
+
+.button-quantity.plus {
+    padding: 0.5em 1.0em;
+}
+
+.button-quantity.minus {
+    padding: 0.5em 1.1em;
+}
+

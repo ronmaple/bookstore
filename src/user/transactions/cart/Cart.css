@@ -1,0 +1,19 @@
+.cart-main {
+    width: 50%;
+    min-height: 300px;
+    margin: 5em auto;
+    background-color: white;
+    box-shadow: 0 0.3125rem 1rem 0 rgba(0,0,0,0.24);
+}
+
+.cart-headers {
+    width: 50%;
+    height: 5em;
+    margin: 5em auto;
+    text-align: center;
+    border: solid 1px grey;
+}
+
+.cart-headers h3 {
+    font-size: 2.0em;
+}
