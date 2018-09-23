@@ -25,7 +25,7 @@ module.exports = (app) => {
             insert if doesn't exist
     */
     app.post('/saveCart', (req, res) => {
-        const User = mongoose.model('User');
+        const User = mongoose.model('users');
 
         let id = req.body.itemID;
         let quantity = req.body.itemQuantity;
