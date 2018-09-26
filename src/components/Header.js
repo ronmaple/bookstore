@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, NavItem, Glyphicon } from 'react-bootstrap'
-
 import './Header.css';
-export default class Header extends Component {
+
+// state management
+import { connect } from 'react-redux'
+
+class Header extends Component {
+
+  renderContent() {
+    switch (this.props.auth) {
+      case null:
+        return 'Loading...';
+      case false: 
+        return 'Logged out';
+      default: 
+        return 'Logged in';
+    }
+  }
   render() {
     return (
       <div className="header" >
@@ -18,9 +32,15 @@ export default class Header extends Component {
           </ Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
+
               <NavItem eventKey={1}>
-                Login
+                <Link to='/auth/google'>
+                    {
+                      this.renderContent()
+                    }
+                </Link>
               </NavItem>
+
               <NavItem eventKey={2}>
                 Categories
               </NavItem>
@@ -30,6 +50,7 @@ export default class Header extends Component {
                   Cart <Glyphicon glyph="shopping-cart" />
                 </Link>
               </NavItem>
+
             </Nav>
           </Navbar.Collapse>
           </Navbar>
@@ -37,3 +58,9 @@ export default class Header extends Component {
     )
   }
 }
+
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps)(Header);
