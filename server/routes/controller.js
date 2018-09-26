@@ -10,24 +10,24 @@ module.exports = (app) => {
     // parse application/json
     app.use(bodyParser.json())
 
-    app.get('/api', (req, res) => {
+    app.get('/api', async (req, res) => {
         const Product = mongoose.model('Product');
-        Product
-            .find({})
-            .then(data => res.json({ data })
-        );
+        const data = await Product.find({});
+        res.json( { data } );
     })
-    
+
+
     /* 
         currently, only saves 1 item in the shopping cart.
         change to multiple selection: 
             Update when exists,
             insert if doesn't exist
     */
-    app.post('/saveCart', (req, res) => {
+
+    app.post('/saveCart', async (req, res) => {
         const User = mongoose.model('users');
 
-        let id = req.body.itemID;
+        const id = req.body.itemID;
         let quantity = req.body.itemQuantity;
 
 
